@@ -11,7 +11,7 @@ function sortByStrings(s,t){
 
   // loop to go through the entire array of where we want to take the letter and check it with other array 
   for(let i = 0; i < tLength; i++){
-    
+
   // following loop is checking the each letter of t array with s array and storing it in the string.  
     for(let j = 0; j < sLength; j++){
       if(t[i] == s[j])
@@ -24,4 +24,7 @@ function sortByStrings(s,t){
   
   console.log(sortByStrings("good", "odg"))
   console.log(sortByStrings("weather", "therapyw"))
-  
+
+
+
+
