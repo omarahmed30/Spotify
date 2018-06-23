@@ -1,6 +1,10 @@
 class CalendarController < ApplicationController
+    # before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+    
+    skip_before_action :verify_authenticity_token
     require 'date'
     def index
+        @calendars = Calendar.all
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
         # @date = Date.today
         @monthStart = @date.beginning_of_month.beginning_of_week(start_day = :sunday)
@@ -15,14 +19,56 @@ class CalendarController < ApplicationController
     end
 
     def show
-
+        @calendar = Calendar.find(params[:id])
     end
+
     def create
-        @calendar = Calendar.new(params(calendar_params)
-            redirect_to calendar
-        
-
+        @calendar = Calendar.new(calendar_params)
+        if @calendar.save
+            redirect_to root_path
+        else
+            render 'new'
+        end
     end
+  
+    
+
+
+    def set_calendar
+        @calendar = Calendar.find(params[:id])
+    end
+    private
+
+        def calendar_params
+            params.permit(:event_name, :event_description, :start_date, :end_date)
+        end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def calendar(date = Date.today, &block)
         Calendar.new(self, date, block).table
@@ -34,10 +80,4 @@ class CalendarController < ApplicationController
         return 29 if month == 2 && Date.gregorian_leap?(year)
         COMMON_YEAR_DAYS_IN_MONTH[month]
     end
-
-
-
-    def calendar_params
-        params.require(:calendar).permit(:title, :event_description, :stratdate, :enddate)
-      end
 end

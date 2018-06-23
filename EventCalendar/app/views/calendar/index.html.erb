@@ -35,7 +35,7 @@
         <tr>
             <% j = 1 %>
                 <% while j <= 7 %>
-                    <td><a href="/"> <%= j %> </a></td>
+                    <td><a href="/calendar/new"> <%= j %> </a></td>
                     <% j += 1 %>
                 <% end %>
             <% i += 1 %>
@@ -44,7 +44,7 @@
             <tr>
                 <% j = 1 %>
                     <% while j <= 7 %>
-                        <td><a href="/" ><%= j + 7 %> </a></td>
+                        <td><a href="/calendar/new" ><%= j + 7 %> </a></td>
                         <% j += 1 %>
                     <% end %>
                 <% i += 1 %>
@@ -53,7 +53,7 @@
             <tr>
                 <% j = 1 %>
                     <% while j <= 7 %>
-                        <td><a href="/"> <%= j + 14 %> </a></td>
+                        <td><a href="/calendar/new"> <%= j + 14 %> </a></td>
                         <% j += 1 %>
                     <% end %>
                 <% i += 1 %>
@@ -62,7 +62,7 @@
             <tr>
                 <% j = 1 %>
                     <% while j <= 7 %>
-                        <td><a href="/"> <%= j + 21 %> </a></td> 
+                        <td><a href="/calendar/new"> <%= j + 21 %> </a></td> 
                         <% j += 1 %>
                     <% end %>
                 <% i += 1 %>
@@ -72,3 +72,7 @@
    
   </tbody>
 </table>
+
+<% @calendars.each do |c|  %>
+    <%= c.event_name %>
+    <% end %>

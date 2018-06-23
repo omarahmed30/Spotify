@@ -1,24 +1,17 @@
-<%= bootstrap_form_with(model: calendar, local: true) do |form| %>
+
     
-  
-    <div class="field">
-      <%= form.text_field :name %>
-    </div>
-    <div class="field">
-      <%= form.text_field :event_description %>
-    </div>
-  
-    <div class="field">
-      <%= form.date_select :start_date %>
-    </div>
-  
-    <div class="field">
-      <%= form.date_select :end_date %>
-    </div>
-  
+
+    <%= form_for @calendar, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+      <%= f.text_field :event_name %>
+      <br>
+      <%= f.text_field :event_description %>
+      <br>
+      <%= date_select :calendar, :start_date %>
+      <br><br>
+      <%= f.submit "Create" %>
+    <% end %>
     
-  
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  <% end %>
+
+
+    <p> Select start date </p>
+    <%= date_select :variable, :attribute  %>
