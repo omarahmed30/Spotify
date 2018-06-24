@@ -24,11 +24,9 @@ class CalendarController < ApplicationController
 
     def create
         @calendar = Calendar.new(calendar_params)
-        if @calendar.save
-            redirect_to root_path
-        else
-            render 'new'
-        end
+        @calendar.save
+        redirect_to root_path
+        
     end
   
     
@@ -40,7 +38,7 @@ class CalendarController < ApplicationController
     private
 
         def calendar_params
-            params.permit(:event_name, :event_description, :start_date, :end_date)
+            params.require(:calendar).permit(:event_name, :event_description, :start_date, :end_date)
         end
 
 
