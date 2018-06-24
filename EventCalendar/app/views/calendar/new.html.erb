@@ -1,23 +1,4 @@
-<h1>New Event</h1>
+<h3 class="text-secondary">New Event</h3>
+<hr>
 
-<%= form_for @calendar, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-    <%= f.label :event_name %>
-    <br>
-    <%= f.text_field :event_name %>
-    <br>
-    <%= f.label :event_description %>
-    <br>
-    <%= f.text_field :event_description %>
-    <br>
-    <%= f.label :start_date %>
-    <br>
-    <%= date_select :calendar, :start_date %>
-    <br>
-    <%= f.label :end_date %>
-    <br>
-    <%= date_select :calendar, :end_date %>
-      
-    
-    <br><br>
-    <%= f.submit "Create" %>
-  <% end %>
+<%= render 'form' %>

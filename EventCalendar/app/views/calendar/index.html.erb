@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <h1><%= "#{Date.today.next_month.strftime("%B")} #{@date.year}" %></h1>
+        <h1 class="text-muted"><%= "#{Date.today.next_month.strftime("%B")} #{@date.year}" %></h1>
     </div>
 </div>
 
@@ -13,13 +13,13 @@
   
     
     
-
+<h4 class="text-secondary text-center font-weight-light font-italic" > Please click on a date to create an event, or click on the name of an event to see full detail. </h4><br>
 
 
 <table class="table table-bordered">
   <thead>
-    <tr>
-      <th scope="col">Sunday</th>
+    <tr class="text-muted font-weight-normal">
+      <th  scope="col">Sunday</th>
       <th scope="col">Monday</th>
       <th scope="col">Tuesday</th>
       <th scope="col">Wednesday</th>
@@ -38,7 +38,7 @@
                     <td><a href="/calendar/new"> <%= j  %> </a> 
                         <% @calendars.each do |c|  %>
                             <% if c.start_date.mday == j %>
-                            <a href="/calendar/<%= c.id %>"> <%= c.event_name %></a><br>
+                            <a href="/calendar/<%= c.id %>" > <%= c.event_name %></a><br>
                             <% end %>
                         <% end %>
                     </td>

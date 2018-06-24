@@ -1,14 +1,16 @@
-<h1> I am a show page </h1>
-
 <br>
-<h3> Event Name </h3>
-<h2><%= @calendar.event_name %></h2>
+<div class=" font-weight-normal">
+<h3 class="text-dark "> Event Name </h3>
+<h4 class="text-muted "><%= @calendar.event_name %></h4>
 <br>
-<h3> Event Description </h3>
-<%= @calendar.event_description %>
+<h3 class="text-dark"> Description </h3>
+<p class="text-muted"><%= @calendar.event_description %><p>
 <br>
-<h3> Event Starts at </h3>
-<%= @calendar.start_date%>
+<h3 class="text-dark"> Starts at </h3>
+<h4 class="text-muted"><%= @calendar.start_date.strftime("%B %d, %Y") %></h4>
 <br>
-<h3> Event End on </h3>
-<%= @calendar.end_date %>
+<h3 class="text-dark"> Ends on </h3>
+<h4 class="text-muted"><%= @calendar.end_date.strftime("%B %d, %Y") %></h4>
+</div>
+<br><hr>
+<%= link_to "Home", root_path, class: "btn btn-secondary" %>
