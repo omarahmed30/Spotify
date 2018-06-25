@@ -1,16 +1,18 @@
 <br>
 <div class=" font-weight-normal">
-<h3 class="text-dark "> Event Name </h3>
-<h4 class="text-muted "><%= @calendar.event_name %></h4>
-<br>
-<h3 class="text-dark"> Description </h3>
-<p class="text-muted"><%= @calendar.event_description %><p>
-<br>
-<h3 class="text-dark"> Starts at </h3>
-<h4 class="text-muted"><%= @calendar.start_date.strftime("%B %d, %Y") %></h4>
-<br>
-<h3 class="text-dark"> Ends on </h3>
-<h4 class="text-muted"><%= @calendar.end_date.strftime("%B %d, %Y") %></h4>
+    <h3 class="text-dark "> Event Name </h3>
+    <h4 class="text-muted "><%= @calendar.event_name %></h4><br>
+
+    <h3 class="text-dark"> Description </h3>
+    <p class="text-muted"><%= @calendar.event_description %><p><br>
+
+    <h3 class="text-dark"> Starts at </h3>
+    <h4 class="text-muted"><%= @calendar.start_date.strftime("%B %d, %Y") %></h4><br>
+    
+    <h3 class="text-dark"> Ends on </h3>
+    <h4 class="text-muted"><%= @calendar.end_date.strftime("%B %d, %Y") %></h4><br>
 </div>
-<br><hr>
+
+<hr>
 <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+<%= link_to 'Delete', @calendar, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

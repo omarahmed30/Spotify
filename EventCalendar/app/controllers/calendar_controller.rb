@@ -1,16 +1,20 @@
 class CalendarController < ApplicationController
-    # before_action :set_calendar, only: [:show, :edit, :update, :destroy]
-    
+    before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+   
     skip_before_action :verify_authenticity_token
     require 'date'
+    require 'active_support/core_ext/time'
+    require 'active_support/core_ext/array'
+
+    
+
     def index
         @calendars = Calendar.all
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        # @date = Date.today
-        @monthStart = @date.beginning_of_month.beginning_of_week(start_day = :sunday)
-        @weekStart = @date.beginning_of_week(start_day = :sunday)
-        # @days = days_in_month(6, year = Time.now.year)
-        @days = Time.days_in_month(6, 2018)
+
+        @date = Date.today  
+        @first_calendar_day = @date.beginning_of_month.beginning_of_week(:sunday)
+        @last_calendar_day = @date.end_of_month.end_of_week(:sunday)
+        @weeks = (@first_calendar_day..@last_calendar_day).to_a.in_groups_of(7)
         
     end
 
@@ -19,7 +23,6 @@ class CalendarController < ApplicationController
     end
 
     def show
-        @calendar = Calendar.find(params[:id])
     end
 
     def create
@@ -30,15 +33,22 @@ class CalendarController < ApplicationController
     end
   
     
-
-
-    def set_calendar
-        @calendar = Calendar.find(params[:id])
+    def destroy
+        @calendar.destroy
+        respond_to do |format|
+          format.html { redirect_to root_url, notice: 'Event was successfully deleted.' }
+          format.json { head :no_content }
+        end
     end
+
     private
 
         def calendar_params
             params.require(:calendar).permit(:event_name, :event_description, :start_date, :end_date)
+        end
+
+        def set_calendar
+            @calendar = Calendar.find(params[:id])
         end
 
 
