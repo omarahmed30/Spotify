@@ -1,14 +1,12 @@
 # Event Calendar
+Dates are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code 'min: 0.days.ago' in the form next to where we capture the date will do stop users from picking the past dates. I tested it.
 
 ## Link to the website
 https://calendar4events.herokuapp.com
 
 ## Technology used
 
-<img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png"  width="80px">
-HTML is a Hypertext Markup Language, the code that describes web pages.
-
-<img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png"  width="80px">
+<img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png"  width="80px"> <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png"  width="80px">
 CSS is short for Cascading Style Sheet and it allows web developers to alter the layout and appearance of their web pages.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1200px-Ruby_On_Rails_Logo.svg.png"  width="100px">
