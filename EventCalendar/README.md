@@ -7,7 +7,9 @@ https://calendar4events.herokuapp.com
 ## Technology used
 
 <img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png" height="80px"  width="80px"> <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png" height="80px"  width="80px"> <img src="https://bilalamjad.net/wp-content/uploads/2015/07/bs.png" height="70px"  width="80px"> <img src="http://www.agiratech.com/wp-content/uploads/2017/09/Image-3.jpg" height="70px" width="80px"> <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489695931/postgresql.png"  height="80px" width="80px"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1280px-SQLite370.svg.png"  height="80px" width="80px">
-Postgres database for production and it also works well with heroku.
+
+* Postgres database for production and it also works well with heroku.
+* Sqlite for development
 
 ## Getting Started
 * Clone or fork the repository to your local computer.
