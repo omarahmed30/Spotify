@@ -1,20 +1,16 @@
-
-
 <div class="row">
     <div class="col-md-12 text-center">
-        <h1 class="text-muted"><%= "#{Date.today.next_month.strftime("%B")} #{@date.year}" %></h1>
+        <h1 class="text-muted"> <%= "#{@date.strftime("%B")} #{@date.year}" %> </h1>  
     </div>
 </div>
-
-
-
-<% #= @days %>
-
-  
     
-    
-<h4 class="text-secondary text-center font-weight-light font-italic" > Please click on a date to create an event, or click on the name of an event to see full detail. </h4><br>
+<h4 class="text-secondary text-center font-weight-light font-italic"> 
+    Please click on a date to create an event, or click on the name of an event to see full detail. 
+</h4><br>
 
+<h3 class="text-secondary text-center font-weight-light font-italic">
+    Calendar from <%= @first_calendar_day.strftime("%B %d, %Y") %> to <%= @last_calendar_day.strftime("%B %d, %Y") %> 
+</h3><br>
 
 <table class="table table-bordered">
   <thead>
@@ -29,16 +25,15 @@
     </tr>
   </thead>
   <tbody>
-  <% i = 1 %> 
-    <% while i <= 4%>
-    <% if( i == 1) %>
+    <% i = 0 %> 
+    <% while i < @weeks.length %>
         <tr>
-            <% j = 1 %>
-                <% while j <= 7 %>
-                    <td><a href="/calendar/new"> <%= j  %> </a> 
+            <% j = 0 %>
+                <% while j < @weeks[i].length %>
+                    <td><a href="/calendar/new"> <%= @weeks[i][j].mday  %> </a> 
                         <% @calendars.each do |c|  %>
-                            <% if c.start_date.mday == j %>
-                            <a href="/calendar/<%= c.id %>" > <%= c.event_name %></a><br>
+                            <% if c.start_date.mday == @weeks[i][j].mday %>
+                                <a href="/calendar/<%= c.id %>" > <%= c.event_name %></a><br>
                             <% end %>
                         <% end %>
                     </td>
@@ -46,54 +41,7 @@
                 <% end %>
             <% i += 1 %>
         </tr>
-        <% elsif( i == 2) %>  
-            <tr>
-                <% j = 8 %>
-                    <% while j <= 14 %>
-                        <td><a href="/calendar/new"> <%= j  %> </a> 
-                            <% @calendars.each do |c|  %>
-                                <% if c.start_date.mday == j %>
-                                <a href="/calendar/<%= c.id %>"> <%= c.event_name %></a><br>
-                                <% end %>
-                            <% end %>
-                        </td>
-                        <% j += 1 %>
-                    <% end %>
-                <% i += 1 %>
-            </tr>
-        <% elsif( i == 3) %>  
-            <tr>
-                <% j = 15 %>
-                    <% while j <= 21 %>
-                        <td><a href="/calendar/new"> <%= j  %> </a> 
-                            <% @calendars.each do |c|  %>
-                                <% if c.start_date.mday == j %>
-                                <a href="/calendar/<%= c.id %>"> <%= c.event_name %></a><br>
-                                <% end %>
-                            <% end %>
-                        </td>
-                        <% j += 1 %>
-                    <% end %>
-                <% i += 1 %>
-            </tr>  
-        <% elsif( i == 4) %>  
-            <tr>
-                <% j = 22 %>
-                    <% while j <= 28 %>
-                        <td><a href="/calendar/new"> <%= j  %> </a> 
-                            <% @calendars.each do |c|  %>
-                                <% if c.start_date.mday == j %>
-                                <a href="/calendar/<%= c.id %>"> <%= c.event_name %></a><br>
-                                <% end %>
-                            <% end %>
-                        </td>
-                        <% j += 1 %>
-                    <% end %>
-                <% i += 1 %>
-            </tr>
-        <% end %>
     <% end %>
-
   </tbody>
 </table>
 
