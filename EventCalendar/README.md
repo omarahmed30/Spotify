@@ -27,5 +27,5 @@ Incase if it does not work try the following commands and then go to the link ab
 * `rails db:drop`
 * `rails db:create`
 * `rails db:schema:load`
-* `Rails db:seed`
+
 
