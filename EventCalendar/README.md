@@ -21,11 +21,13 @@ Postgres was my choice for database and it also works well with heroku.
 * Clone or fork the repository to your local computer.
 * Follow these commands
 * `rails db:migrate`
+* ` rails s`
 Go to http://localhost:3000 to test the code.
 Incase if it does not work try the following commands and then go to the link above to test the code.
 
 * `rails db:drop`
 * `rails db:create`
 * `rails db:schema:load`
+* ` rails s`
 
 
