@@ -6,8 +6,9 @@ https://calendar4events.herokuapp.com
 
 ## Technology used
 
-<img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png"  width="80px"> <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png"  width="80px"> <img src="https://bilalamjad.net/wp-content/uploads/2015/07/bs.png"  width="80px"> <img src="http://www.agiratech.com/wp-content/uploads/2017/09/Image-3.jpg"  width="100px">
-<img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489695931/postgresql.png"  width="100px">
+<img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png"  width="80px"> <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png"  width="80px"> <img src="https://bilalamjad.net/wp-content/uploads/2015/07/bs.png"  width="100px"> <img src="http://www.agiratech.com/wp-content/uploads/2017/09/Image-3.jpg"  width="160px">
+
+<img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489695931/postgresql.png"  width="140px">
 Postgres was my choice for database and it also works well with heroku.
 
 ## Getting Started
