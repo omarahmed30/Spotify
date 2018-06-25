@@ -1,4 +1,4 @@
-# Calendar4Events
+# Event Calendar
 
 ## Link to the website
 https://calendar4events.herokuapp.com
