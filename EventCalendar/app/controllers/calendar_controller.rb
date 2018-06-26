@@ -15,6 +15,8 @@ class CalendarController < ApplicationController
         @first_calendar_day = @date.beginning_of_month.beginning_of_week(:sunday)
         @last_calendar_day = @date.end_of_month.end_of_week(:sunday)
         @weeks = (@first_calendar_day..@last_calendar_day).to_a.in_groups_of(7)
+
+        # render json: {status: "Success", message: "Loaded events", data:@calendars}, status: :ok
         
     end
 
@@ -23,6 +25,7 @@ class CalendarController < ApplicationController
     end
 
     def show
+        # render json: {status: "Success", message: "Loaded events", data:@calendar}, status: :ok
     end
 
     def create
