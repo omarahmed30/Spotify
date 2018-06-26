@@ -1,24 +1,27 @@
-# README
+# Event Calendar
+Dates are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code * 'min: 0.days.ago' in the form next to where we capture the date will stop users from picking the past dates. I tested it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Link to the website
+https://calendar4events.herokuapp.com
 
-Things you may want to cover:
+## Technology used
 
-* Ruby version
+<img src="http://www.asti.co.in/wp-content/uploads/2017/01/html_icon.png" height="80px"  width="80px"> <img src="http://icons.iconarchive.com/icons/graphics-vibe/developer/256/css-icon.png" height="80px"  width="80px"> <img src="https://bilalamjad.net/wp-content/uploads/2015/07/bs.png" height="70px"  width="80px"> <img src="http://www.agiratech.com/wp-content/uploads/2017/09/Image-3.jpg" height="70px" width="80px"> <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1489695931/postgresql.png"  height="80px" width="80px"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1280px-SQLite370.svg.png"  height="80px" width="80px">
 
-* System dependencies
+* Postgres database for production and it also works well with heroku.
+* Sqlite for development
 
-* Configuration
+## Getting Started
+* Clone or fork the repository to your local computer.
+* Follow these commands
+* `rails db:migrate`
+* ` rails s`
+Go to http://localhost:3000 to test the code.
+Incase if it does not work try the following commands and then go to the link above to test the code.
 
-* Database creation
+* `rails db:drop`
+* `rails db:create`
+* `rails db:schema:load`
+* ` rails s`
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
