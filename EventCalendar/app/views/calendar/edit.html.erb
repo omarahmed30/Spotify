@@ -1,4 +1,6 @@
-<%= form_for @calendar, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<h1>Editing Student</h1>
+
+<%= form_for @calendar, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
     <%= f.label :event_name, class:"text-secondary" %><br>
     <%= f.text_field :event_name, class: "form-control", required: true %><br>
 
@@ -14,3 +16,6 @@
     <%= f.submit "Create", class: "btn btn-success" %>
     <%= link_to "Cancel", root_path, class: "btn btn-danger" %>
 <% end %>
+
+<%= link_to 'Show', @calendar %> |
+<%= link_to 'Back', root_path %>
