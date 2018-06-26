@@ -1,5 +1,5 @@
 # Event Calendar
-This app helps users create and manage their events. Users also can edit and delete events. Dates on this app are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code 'min: 0.days.ago' in the form next to where we capture the date will stop users from picking the past dates. I tested it.
+This app helps users create and manage their events. Users also can edit and delete events. Dates on this app are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code 'min: 0.days.ago' in the form next to where we capture the date will stop users from picking the past dates. I tested it. I place the code to make this an json API in index and show actions in calendar controller, however I commented it out, so user can utilize the app using nice GUI. If we uncomment the code and run it in a browser under localhost:3000, we will see json data rendered back to us.
 
 ## Link to the website
 https://calendar4events.herokuapp.com
