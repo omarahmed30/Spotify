@@ -1,5 +1,5 @@
 # Event Calendar
-Dates are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code * 'min: 0.days.ago' in the form next to where we capture the date will stop users from picking the past dates. I tested it.
+This app helps users create and manage their events. Users also can edit and delete events. Dates on this app are dynamically change as the month change. As of now I am allowing users to choose a past date to set the event. It is an easy fix. Place the following code 'min: 0.days.ago' in the form next to where we capture the date will stop users from picking the past dates. I tested it.
 
 ## Link to the website
 https://calendar4events.herokuapp.com
