@@ -13,6 +13,9 @@ https://calendar4events.herokuapp.com
 
 ## Getting Started
 * Clone or fork the repository to your local computer.
+* In your terminal if you are using Mac, please go the desktop directory and run the follwing command.
+* ` git clone https://github.com/omarahmed30/Spotify.git`
+* Next ` cd spotify/eventcalendar `
 * Follow these commands
 * `rails db:migrate`
 * ` rails s`
